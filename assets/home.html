@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; form-action https://duckduckgo.com; base-uri 'none'">
+  <title>Rico Browser</title>
+  <link rel="icon" href="rico.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><img src="rico.svg" alt="" width="36" height="36"> Rico <span>Browser</span></div>
+    <span class="status">●&ensp; Nouvel onglet</span>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="heading">
+      <div class="orbit" aria-hidden="true"><i></i><i></i><i></i><b>R</b></div>
+      <div class="hero-content">
+        <p class="eyebrow">TON ESPACE WEB</p>
+        <h1 id="heading">On va où<span> ?</span></h1>
+        <p class="intro" id="search-intro">Cherche sur le Web avec DuckDuckGo.</p>
+        <form id="rico-search" action="https://duckduckgo.com/" method="get" role="search">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.4 15.4 4.2 4.2"/></svg>
+          <input name="q" aria-label="Rechercher avec DuckDuckGo" placeholder="Rechercher avec DuckDuckGo…" required>
+          <button>Rechercher <span aria-hidden="true">↗</span></button>
+        </form>
+      </div>
+    </section>
+    <nav aria-label="Raccourcis">
+      <h2>Raccourcis</h2>
+      <div class="shortcuts">
+        <a href="https://www.youtube.com/"><span class="youtube" aria-hidden="true">▶</span>YouTube <b aria-hidden="true">↗</b></a>
+        <a href="https://fr.wikipedia.org/"><span class="wiki" aria-hidden="true">W</span>Wikipédia <b aria-hidden="true">↗</b></a>
+        <a href="https://github.com/"><span class="github" aria-hidden="true">⌘</span>GitHub <b aria-hidden="true">↗</b></a>
+        <a href="https://duckduckgo.com/"><span class="duck" aria-hidden="true">D</span>DuckDuckGo <b aria-hidden="true">↗</b></a>
+      </div>
+    </nav>
+  </main>
+  <footer><span>RICO BROWSER</span><span>Propulsé par Firefox ESR</span></footer>
+</body>
+</html>

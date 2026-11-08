@@ -1,0 +1,86 @@
+:root {
+  --toolbar-color: #f8f3ff !important;
+  --toolbar-bgcolor: #281f3e !important;
+  --toolbar-field-background-color: #171326 !important;
+  --toolbar-field-color: #f8f3ff !important;
+  --toolbar-field-focus-background-color: #211932 !important;
+  --toolbar-field-focus-color: #fff7ff !important;
+  --toolbar-field-focus-border-color: #ffad79 !important;
+  --tab-selected-bgcolor: #493760 !important;
+  --tab-selected-textcolor: #fff2e8 !important;
+  --toolbarbutton-icon-fill: #f3e6ff !important;
+}
+
+#TabsToolbar {
+  background: linear-gradient(95deg, #211833, #37264e 60%, #221936) !important;
+  color: #eee3fc !important;
+}
+
+#TabsToolbar-customization-target::before {
+  content: "RICO";
+  align-self: center;
+  padding: 4px 8px;
+  margin-inline: 9px 6px;
+  border-radius: 6px;
+  background: #ffad79;
+  color: #251732;
+  font: 800 11px "Segoe UI", sans-serif;
+  letter-spacing: .12em;
+}
+
+#nav-bar, #PersonalToolbar {
+  background: #281f3e !important;
+  color: #f8f3ff !important;
+}
+
+#navigator-toolbox { border-bottom: 1px solid #684c84 !important; }
+
+.tab-background {
+  border-radius: 9px !important;
+  margin-block: 4px !important;
+}
+
+.tab-background:is([selected], [multiselected]) {
+  box-shadow: inset 0 -2px #ffad79 !important;
+}
+
+#urlbar-background {
+  border-radius: 10px !important;
+  border: 1px solid #5e497e !important;
+}
+
+#urlbar[focused] > #urlbar-background { border-color: #ffad79 !important; }
+
+/* Hamburger menu and its subviews use the same colors as the browser. */
+#appMenu-popup {
+  --panel-background: #231b35 !important;
+  --panel-color: #f8f3ff !important;
+  --panel-border-color: #705489 !important;
+  --panel-border-radius: 15px !important;
+  --panel-separator-color: #49375e !important;
+  --panel-item-hover-bgcolor: #3f2d55 !important;
+  --panel-item-active-bgcolor: #54366a !important;
+}
+
+#appMenu-popup :is(panelview, .panel-subview-body) {
+  color: #f8f3ff !important;
+}
+
+#appMenu-mainView .panel-subview-body::before {
+  content: "RICO  /  NAVIGATEUR";
+  display: block;
+  padding: 10px 12px;
+  margin: 3px 5px 6px;
+  border-radius: 9px;
+  background: #332348;
+  color: #ffad79;
+  font: 800 11px "Segoe UI", sans-serif;
+  letter-spacing: .14em;
+}
+
+#appMenu-popup toolbarbutton.subviewbutton:hover {
+  background-color: #3f2d55 !important;
+  border-radius: 8px !important;
+}
+
+#PanelUI-menu-button { list-style-image: url("rico.svg") !important; }

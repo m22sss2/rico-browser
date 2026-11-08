@@ -1,0 +1,178 @@
+@-moz-document url-prefix("about:preferences") {
+  :root {
+    --background-color-canvas: #171325 !important;
+    --background-color-box: #281f3a !important;
+    --in-content-page-background: #171325 !important;
+    --in-content-page-color: #f8f3ff !important;
+    --text-color: #f8f3ff !important;
+    --text-color-deemphasized: #c8b7de !important;
+    --color-accent-primary: #ffad79 !important;
+    --color-accent-primary-hover: #ffc09b !important;
+    --color-accent-primary-active: #f49460 !important;
+    --text-color-accent: #ffad79 !important;
+    --focus-outline-color: #ffad79 !important;
+    --button-background-color-primary: #ffad79 !important;
+    --button-text-color-primary: #251735 !important;
+    --border-color: #59446d !important;
+    color-scheme: dark !important;
+    color: #f8f3ff !important;
+    background: #171325 !important;
+  }
+
+  body, #preferences-body, .pane-container { background: #171325 !important; color: #f8f3ff !important; }
+  #categories {
+    background: linear-gradient(165deg, #2f2044, #1c162d 72%) !important;
+    border-inline-end: 1px solid #59446d !important;
+    color: #f8f3ff !important;
+  }
+
+  moz-card { --card-background-color: #261d38 !important; --card-border-color: #49365d !important; }
+  moz-promo { --background-color-box: #312246 !important; }
+  #searchInput { background-color: #2d2140 !important; border-color: #6b5186 !important; }
+}
+
+/* Search rules are scoped to result routes on supported engines. */
+@-moz-document
+  regexp("^https://((www|safe|noai|html|lite)\\.)?duckduckgo\\.com/(\\?.*q=.*|html/.*|lite/.*)$"),
+  regexp("^https://www\\.google\\.(com|fr|be|ca|ch|co\\.uk|de|es|it|nl|com\\.au)/search([?#].*)?$"),
+  regexp("^https://(www\\.)?bing\\.com/(search|images/search|videos/search|news/search)([?#].*)?$"),
+  regexp("^https://(www\\.)?qwant\\.com/(\\?.*q=.*|[a-z-]+/search.*)$"),
+  regexp("^https://(www\\.)?startpage\\.com/(sp/search|do/(search|dsearch|asearch)|search)([/?#].*)?$"),
+  regexp("^https://(www\\.)?perplexity\\.ai/(search|s)/.*$"),
+  regexp("^https://[a-z-]+\\.wikipedia\\.org/(w/index\\.php\\?.*(search=|title=Sp%|title=Special)|wiki/(Spécial:Recherche|Sp%C3%A9cial:Recherche|Special:Search).*)$"),
+  regexp("^https://www\\.ebay\\.(fr|com|ca|de|es|it|co\\.uk|com\\.au)/sch/.*$") {
+  :root {
+    --rico-page: #141222;
+    --rico-panel: #241b38;
+    --rico-field: #302344;
+    --rico-border: #655080;
+    --rico-text: #f8f3ff;
+    --rico-muted: #c7b7db;
+    --rico-accent: #ffad79;
+    --rico-link: #e0bdff;
+    color-scheme: dark !important;
+    background: var(--rico-page) !important;
+    color: var(--rico-text) !important;
+  }
+
+  body {
+    background: var(--rico-page) !important;
+    color: var(--rico-text) !important;
+  }
+
+  :is(input[type="search"], input[type="text"][name="q"], input[name="_nkw"], textarea[name="q"]) {
+    background: var(--rico-field) !important;
+    color: var(--rico-text) !important;
+    caret-color: var(--rico-accent) !important;
+  }
+
+  :is(input[type="search"], input[name="q"], input[name="_nkw"], textarea[name="q"])::placeholder {
+    color: var(--rico-muted) !important;
+  }
+
+  :is(a, button, input, textarea, [role="tab"]):focus-visible {
+    outline-color: var(--rico-accent) !important;
+  }
+}
+
+@-moz-document regexp("^https://((www|safe|noai|html|lite)\\.)?duckduckgo\\.com/(\\?.*q=.*|html/.*|lite/.*)$") {
+  :root, body {
+    --theme-col-bg-page: #141222 !important;
+    --theme-col-bg-01: #141222 !important;
+    --theme-col-bg-02: #241b38 !important;
+    --theme-col-bg-03: #302344 !important;
+    --theme-col-text-primary: #f8f3ff !important;
+    --theme-col-text-secondary: #c7b7db !important;
+  }
+
+  :is(#header_wrapper, #header, .header-wrap, [data-testid="header"], [data-testid="header-wrapper"]) {
+    background: linear-gradient(115deg, #211833, #392653) !important;
+    color: var(--rico-text) !important;
+    border-bottom-color: var(--rico-border) !important;
+  }
+
+  :is(#search_form, .searchbox, [data-testid="searchbox"], form[role="search"]) {
+    background: var(--rico-field) !important;
+    border-radius: 14px !important;
+    box-shadow: inset 0 0 0 1px var(--rico-border) !important;
+  }
+
+  :is(#search_form, [data-testid="searchbox"], form[role="search"]) :is(input[name="q"], button[type="submit"]) {
+    background-color: var(--rico-field) !important;
+  }
+
+  :is([data-testid="result"], .result) {
+    background: var(--rico-panel) !important;
+    border: 1px solid #443357 !important;
+    border-radius: 15px !important;
+    padding: 14px 17px !important;
+    margin-block: 8px !important;
+    color: var(--rico-text) !important;
+  }
+
+  :is([data-testid="result-title-a"], .result__a) { color: var(--rico-link) !important; }
+  :is([data-testid="result-title-a"], .result__a):hover { color: var(--rico-accent) !important; }
+  :is([data-result="snippet"], .result__snippet) { color: var(--rico-muted) !important; }
+  :is([data-testid="web-zci"], .zci__body, .module--about, #zero_click_wrapper) {
+    background: var(--rico-panel) !important;
+    border-radius: 15px !important;
+  }
+  :is([aria-current="page"], [role="tab"][aria-selected="true"]) { color: var(--rico-accent) !important; }
+}
+
+@-moz-document regexp("^https://www\\.google\\.(com|fr|be|ca|ch|co\\.uk|de|es|it|nl|com\\.au)/search([?#].*)?$") {
+  #search { color: var(--rico-text) !important; }
+  :is(#searchform, #appbar, #fbar, #cnt) { background: var(--rico-page) !important; }
+  #searchform { border-bottom: 1px solid var(--rico-border) !important; }
+  .RNNXgb { background: var(--rico-field) !important; border-color: var(--rico-border) !important; border-radius: 14px !important; }
+  :is(#rso .g, #search .MjjYud > .g) {
+    background: var(--rico-panel) !important;
+    border: 1px solid #443357 !important;
+    border-radius: 15px !important;
+    padding: 14px 17px !important;
+  }
+  #search a h3 { color: var(--rico-link) !important; }
+  #search a:hover h3 { color: var(--rico-accent) !important; }
+  #search :is(cite, .VwiC3b) { color: var(--rico-muted) !important; }
+}
+
+@-moz-document regexp("^https://(www\\.)?bing\\.com/(search|images/search|videos/search|news/search)([?#].*)?$") {
+  :is(#b_header, #b_content, #b_footer) { background: var(--rico-page) !important; }
+  #b_header { border-bottom: 1px solid var(--rico-border) !important; }
+  :is(.b_searchboxForm, #sb_form) { background: var(--rico-field) !important; border-color: var(--rico-border) !important; border-radius: 14px !important; }
+  #b_results .b_algo {
+    background: var(--rico-panel) !important;
+    border: 1px solid #443357 !important;
+    border-radius: 15px !important;
+    margin-bottom: 10px !important;
+    color: var(--rico-text) !important;
+  }
+  #b_results .b_algo h2 a { color: var(--rico-link) !important; }
+  #b_results .b_algo h2 a:hover { color: var(--rico-accent) !important; }
+  #b_results .b_algo :is(p, cite) { color: var(--rico-muted) !important; }
+}
+
+@-moz-document
+  regexp("^https://(www\\.)?qwant\\.com/(\\?.*q=.*|[a-z-]+/search.*)$"),
+  regexp("^https://(www\\.)?startpage\\.com/(sp/search|do/(search|dsearch|asearch)|search)([/?#].*)?$"),
+  regexp("^https://(www\\.)?perplexity\\.ai/(search|s)/.*$"),
+  regexp("^https://[a-z-]+\\.wikipedia\\.org/(w/index\\.php\\?.*(search=|title=Sp%|title=Special)|wiki/(Spécial:Recherche|Sp%C3%A9cial:Recherche|Special:Search).*)$"),
+  regexp("^https://www\\.ebay\\.(fr|com|ca|de|es|it|co\\.uk|com\\.au)/sch/.*$") {
+  :is(header, [role="banner"], #header, #gh, .wgl-header, .vector-header-container) {
+    background-color: var(--rico-panel) !important;
+    color: var(--rico-text) !important;
+    border-color: var(--rico-border) !important;
+  }
+  :is(main, [role="main"], #mainContent, .vector-body, .mw-page-container, .srp-main, #results) {
+    background-color: var(--rico-page) !important;
+    color: var(--rico-text) !important;
+  }
+  :is(.w-gl__result, .result, [data-testid="webResult"], .mw-search-result, .s-item, .s-card) {
+    background-color: var(--rico-panel) !important;
+    border-color: var(--rico-border) !important;
+    border-radius: 12px !important;
+    color: var(--rico-text) !important;
+  }
+  :is(main, [role="main"], #results) :is(h2, h3) a { color: var(--rico-link) !important; }
+  :is(main, [role="main"], #results) :is(h2, h3) a:hover { color: var(--rico-accent) !important; }
+}
