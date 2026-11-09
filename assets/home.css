@@ -57,12 +57,12 @@ h2 { font-size: 15px; margin: 0 0 12px; }
 .shortcuts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 a { display: flex; align-items: center; gap: 9px; border: 1px solid #403653; border-radius: 12px; padding: 10px; background: #211b33; color: inherit; font-size: 14px; text-decoration: none; }
 a:hover { background: #302643; border-color: #8866b2; }
-a span { display: grid; place-items: center; width: 32px; height: 32px; flex: none; border-radius: 8px; font-weight: 750; }
+a span { display: grid; place-items: center; width: 32px; height: 32px; flex: none; border-radius: 8px; }
 a b { margin-left: auto; color: var(--muted); font-weight: 400; }
-.youtube { background: #593142; color: #ffa1af; }
-.wiki { background: #3e3b5d; color: #d8d0ff; }
-.github { background: #33434c; color: #a4e0d6; }
-.duck { background: #593a38; color: #ffc199; }
+.youtube { background: #42202e; }
+.wiki { background: #3e3b5d; }
+.github { background: #302c42; }
+.twitch { background: #39275b; }
 footer { display: flex; justify-content: space-between; gap: 14px; margin-block: 24px; color: var(--muted); font-size: 11px; }
 footer span:first-child { letter-spacing: .15em; }
 @media (max-width: 760px) {

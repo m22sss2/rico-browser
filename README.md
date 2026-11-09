@@ -29,3 +29,4 @@ Le code et les illustrations propres à Rico sont sous licence MIT. Firefox et u
 
 - [Code source de Firefox](https://github.com/mozilla-firefox/firefox) · [MPL 2.0](https://www.mozilla.org/MPL/2.0/)
 - [Code source de uBlock Origin et licence GPLv3](https://github.com/gorhill/uBlock)
+- [Simple Icons](https://github.com/simple-icons/simple-icons) fournit les tracés SVG des raccourcis. Les logos identifient les sites de leurs titulaires respectifs.
