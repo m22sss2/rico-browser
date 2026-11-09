@@ -21,6 +21,8 @@ Pour mettre le moteur à jour, quittez Rico Browser et lancez **Mettre a jour Ri
 
 Le [registre des illustrations](./assets/rico-mascots.manifest) remplace les renards intégrés identifiés dans Firefox ESR, notamment dans les paramètres, l’accueil de première utilisation et les cartes de l’interface. La [variante IA](./assets/rico-cat-ai.svg) regarde vers le texte à gauche.
 
+Le [module de traduction](./assets/modules/RicoBranding.sys.mjs) adapte les libellés des langues fournies avec le moteur et génère un cache local par version. Les URL, les mentions de marque officielles et les noms de services Mozilla distincts conservent leur forme originale.
+
 ## Licences
 
 Le code et les illustrations propres à Rico sont sous licence MIT. Firefox et uBlock Origin sont des projets tiers et conservent leurs licences respectives. Le dépôt contient les sources de la personnalisation, tandis que le script de construction récupère les composants tiers auprès de leurs éditeurs.

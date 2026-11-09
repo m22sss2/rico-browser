@@ -11,22 +11,7 @@ export class RicoSettingsChild extends JSWindowActorChild {
         logo.style.setProperty("background-image", `url("${logoUrl}")`, "important");
       }
       const about = document.getElementById("category-about-firefox");
-      if (about) {
-        about.setAttribute("iconsrc", logoUrl);
-        if (about.textContent.includes("Firefox")) {
-          about.removeAttribute("data-l10n-id");
-          about.textContent = about.textContent.replace("Firefox", "Rico Browser");
-        }
-      }
-      for (const id of ["isDefaultPane", "isNotDefaultPane"]) {
-        for (const promo of document.querySelectorAll(`[id="${id}"]`)) {
-          const message = promo.getAttribute("message");
-          if (message?.includes("Firefox")) {
-            promo.removeAttribute("data-l10n-id");
-            promo.setAttribute("message", message.replace("Firefox", "Rico Browser"));
-          }
-        }
-      }
+      if (about) about.setAttribute("iconsrc", logoUrl);
     };
     brand();
     // Settings sections are populated after the main document has loaded.

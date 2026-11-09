@@ -48,3 +48,4 @@ override chrome://branding/content/icon128.png resource://rico-assets/rico.svg
 override chrome://browser/skin/sidebar/firefox.svg resource://rico-assets/rico.svg
 override chrome://browser/skin/window-firefox.svg resource://rico-assets/rico.svg
 override chrome://newtab/content/data/content/assets/firefox.svg resource://rico-assets/rico.svg
+override chrome://branding/locale/brand.properties resource://rico-assets/rico-brand.properties
