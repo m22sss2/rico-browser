@@ -74,3 +74,31 @@ footer span:first-child { letter-spacing: .15em; }
   .hero { padding: 20px; }
   form svg, button span { display: none; }
 }
+
+:root[data-rico-theme]:not([data-rico-theme="rico"]) {
+  --accent: var(--rico-tone);
+  --muted: color-mix(in srgb, var(--rico-ink) 75%, var(--rico-base));
+  background: var(--rico-base);
+  color: var(--rico-ink);
+}
+:root[data-rico-scheme="light"] { color-scheme: light; }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) .hero {
+  background: radial-gradient(ellipse at 85% 40%, color-mix(in srgb, var(--rico-base) 70%, var(--rico-tone)), transparent 67%), var(--rico-base);
+  border-color: color-mix(in srgb, var(--rico-base) 65%, var(--rico-tone));
+}
+:root[data-rico-theme]:not([data-rico-theme="rico"]) .orbit i { border-color: color-mix(in srgb, var(--rico-tone) 35%, transparent); }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) .orbit b {
+  color: var(--rico-on-tone);
+  background: var(--rico-tone);
+  border-color: var(--rico-tone);
+}
+:root[data-rico-theme]:not([data-rico-theme="rico"]) :is(form, .shortcuts a) {
+  background: color-mix(in srgb, var(--rico-base) 95%, var(--rico-ink));
+  border-color: color-mix(in srgb, var(--rico-base) 78%, var(--rico-tone));
+}
+:root[data-rico-theme]:not([data-rico-theme="rico"]) input::placeholder,
+:root[data-rico-theme]:not([data-rico-theme="rico"]) .status { color: var(--muted); }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) input { color: var(--rico-ink); }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) .shortcuts a:hover { border-color: var(--rico-tone); }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) button { color: var(--rico-on-tone); }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) button:hover { background: var(--rico-tone); filter: brightness(.93); }

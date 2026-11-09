@@ -29,6 +29,58 @@
   moz-card { --card-background-color: #261d38 !important; --card-border-color: #49365d !important; }
   moz-promo { --background-color-box: #312246 !important; }
   #searchInput { background-color: #2d2140 !important; border-color: #6b5186 !important; }
+
+  #rico-appearance {
+    box-sizing: border-box;
+    padding: 20px 24px;
+    margin: 12px 0 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--background-color-box);
+  }
+  #rico-appearance[hidden], .rico-appearance-controls label[hidden] { display: none !important; }
+  #rico-appearance h2 { margin: 0; }
+  #rico-appearance p { margin: 7px 0 14px; color: var(--text-color-deemphasized); }
+  .rico-appearance-controls { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+  .rico-appearance-controls label { display: grid; gap: 6px; }
+  .rico-appearance-controls :is(select, input) { color: inherit; min-height: 32px; }
+  .rico-memory-row { display: flex; align-items: center; gap: 8px; margin-top: 18px; font-weight: 600; }
+
+  :root[data-rico-theme]:not([data-rico-theme="rico"]) {
+    --rico-panel: color-mix(in srgb, var(--rico-base) 94%, var(--rico-ink));
+    --rico-line: color-mix(in srgb, var(--rico-base) 68%, var(--rico-tone));
+    --background-color-canvas: var(--rico-base) !important;
+    --background-color-box: var(--rico-panel) !important;
+    --in-content-page-background: var(--rico-base) !important;
+    --in-content-page-color: var(--rico-ink) !important;
+    --text-color: var(--rico-ink) !important;
+    --text-color-deemphasized: color-mix(in srgb, var(--rico-ink) 75%, var(--rico-base)) !important;
+    --color-accent-primary: var(--rico-tone) !important;
+    --color-accent-primary-hover: var(--rico-tone) !important;
+    --color-accent-primary-active: var(--rico-tone) !important;
+    --text-color-accent: color-mix(in srgb, var(--rico-tone) 55%, var(--rico-ink)) !important;
+    --focus-outline-color: var(--rico-tone) !important;
+    --button-background-color-primary: var(--rico-tone) !important;
+    --button-text-color-primary: var(--rico-on-tone) !important;
+    --border-color: var(--rico-line) !important;
+    color: var(--rico-ink) !important;
+    background: var(--rico-base) !important;
+  }
+  :root[data-rico-scheme="light"] { color-scheme: light !important; }
+  :root[data-rico-theme]:not([data-rico-theme="rico"]) :is(body, #preferences-body, .pane-container) {
+    background: var(--rico-base) !important;
+    color: var(--rico-ink) !important;
+  }
+  :root[data-rico-theme]:not([data-rico-theme="rico"]) :is(#categories, #searchInput) {
+    background: var(--rico-panel) !important;
+    color: var(--rico-ink) !important;
+    border-color: var(--rico-line) !important;
+  }
+  :root[data-rico-theme]:not([data-rico-theme="rico"]) moz-card {
+    --card-background-color: var(--rico-panel) !important;
+    --card-border-color: var(--rico-line) !important;
+  }
+  :root[data-rico-theme]:not([data-rico-theme="rico"]) moz-promo { --background-color-box: var(--rico-panel) !important; }
 }
 
 /* Search rules are scoped to result routes on supported engines. */
@@ -134,6 +186,12 @@
   #search a h3 { color: var(--rico-link) !important; }
   #search a:hover h3 { color: var(--rico-accent) !important; }
   #search :is(cite, .VwiC3b) { color: var(--rico-muted) !important; }
+  /* Google AI Overview: remove only the decorative fade over the preview. */
+  .RDmXvc, .RDmXvc::before, .RDmXvc::after {
+    background: transparent !important;
+    mask-image: none !important;
+    box-shadow: none !important;
+  }
 }
 
 @-moz-document regexp("^https://(www\\.)?bing\\.com/(search|images/search|videos/search|news/search)([?#].*)?$") {

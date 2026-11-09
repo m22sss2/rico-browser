@@ -84,3 +84,47 @@
 }
 
 #PanelUI-menu-button { list-style-image: url("rico.svg") !important; }
+
+:root[data-rico-theme]:not([data-rico-theme="rico"]) {
+  --rico-panel: color-mix(in srgb, var(--rico-base) 92%, var(--rico-ink));
+  --rico-line: color-mix(in srgb, var(--rico-base) 68%, var(--rico-tone));
+  --toolbar-bgcolor: var(--rico-panel) !important;
+  --toolbar-color: var(--rico-ink) !important;
+  --toolbar-field-background-color: var(--rico-base) !important;
+  --toolbar-field-color: var(--rico-ink) !important;
+  --toolbar-field-focus-background-color: var(--rico-base) !important;
+  --toolbar-field-focus-color: var(--rico-ink) !important;
+  --toolbar-field-focus-border-color: var(--rico-tone) !important;
+  --tab-selected-bgcolor: color-mix(in srgb, var(--rico-panel) 83%, var(--rico-tone)) !important;
+  --tab-selected-textcolor: var(--rico-ink) !important;
+  --toolbarbutton-icon-fill: var(--rico-ink) !important;
+  --lwt-text-color: var(--rico-ink) !important;
+}
+
+:root[data-rico-scheme="light"] { color-scheme: light !important; }
+
+:root[data-rico-theme]:not([data-rico-theme="rico"]) :is(#TabsToolbar, #nav-bar, #PersonalToolbar) {
+  background: var(--rico-panel) !important;
+  color: var(--rico-ink) !important;
+}
+
+:root[data-rico-theme]:not([data-rico-theme="rico"]) #navigator-toolbox { border-bottom-color: var(--rico-line) !important; }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) .tab-background:is([selected], [multiselected]) { box-shadow: inset 0 -2px var(--rico-tone) !important; }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) #urlbar-background { border-color: var(--rico-line) !important; }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) #urlbar[focused] > #urlbar-background { border-color: var(--rico-tone) !important; }
+
+:root[data-rico-theme]:not([data-rico-theme="rico"]) #appMenu-popup {
+  --panel-background: var(--rico-panel) !important;
+  --panel-color: var(--rico-ink) !important;
+  --panel-border-color: var(--rico-line) !important;
+  --panel-separator-color: var(--rico-line) !important;
+  --panel-item-hover-bgcolor: color-mix(in srgb, var(--rico-panel) 85%, var(--rico-tone)) !important;
+  --panel-item-active-bgcolor: var(--panel-item-hover-bgcolor) !important;
+}
+
+:root[data-rico-theme]:not([data-rico-theme="rico"]) #appMenu-popup :is(panelview, .panel-subview-body) { color: var(--rico-ink) !important; }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) #appMenu-popup toolbarbutton.subviewbutton:hover { background-color: var(--panel-item-hover-bgcolor) !important; }
+:root[data-rico-theme]:not([data-rico-theme="rico"]) :is(#appMenu-mainView .panel-subview-body, #TabsToolbar-customization-target)::before {
+  background: var(--rico-tone);
+  color: var(--rico-on-tone);
+}

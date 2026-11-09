@@ -23,6 +23,8 @@ Le [registre des illustrations](./assets/rico-mascots.manifest) remplace les ren
 
 Le [module de traduction](./assets/modules/RicoBranding.sys.mjs) adapte les libellés des langues fournies avec le moteur et génère un cache local par version. Les URL, les mentions de marque officielles et les noms de services Mozilla distincts conservent leur forme originale.
 
+Dans **Paramètres → Apparence → Personnaliser Rico**, choisissez un thème ou réglez le fond et l’accent. Le thème s’applique à l’accueil, aux paramètres et à la fenêtre du navigateur, et le profil mémorise votre choix. L’économie de mémoire évite de précharger des processus web. Les premiers sites peuvent s’ouvrir un peu plus lentement, et le moteur conserve l’isolation des sites.
+
 ## Licences
 
 Le code et les illustrations propres à Rico sont sous licence MIT. Firefox et uBlock Origin sont des projets tiers et conservent leurs licences respectives. Le dépôt contient les sources de la personnalisation, tandis que le script de construction récupère les composants tiers auprès de leurs éditeurs.
