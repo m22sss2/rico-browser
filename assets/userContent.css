@@ -86,7 +86,6 @@
 /* Search rules are scoped to result routes on supported engines. */
 @-moz-document
   regexp("^https://((www|safe|noai|html|lite)\\.)?duckduckgo\\.com/(\\?.*q=.*|html/.*|lite/.*)$"),
-  regexp("^https://www\\.google\\.(com|fr|be|ca|ch|co\\.uk|de|es|it|nl|com\\.au)/search([?#].*)?$"),
   regexp("^https://(www\\.)?bing\\.com/(search|images/search|videos/search|news/search)([?#].*)?$"),
   regexp("^https://(www\\.)?qwant\\.com/(\\?.*q=.*|[a-z-]+/search.*)$"),
   regexp("^https://(www\\.)?startpage\\.com/(sp/search|do/(search|dsearch|asearch)|search)([/?#].*)?$"),
@@ -173,19 +172,16 @@
 }
 
 @-moz-document regexp("^https://www\\.google\\.(com|fr|be|ca|ch|co\\.uk|de|es|it|nl|com\\.au)/search([?#].*)?$") {
-  #search { color: var(--rico-text) !important; }
-  :is(#searchform, #appbar, #fbar, #cnt) { background: var(--rico-page) !important; }
-  #searchform { border-bottom: 1px solid var(--rico-border) !important; }
-  .RNNXgb { background: var(--rico-field) !important; border-color: var(--rico-border) !important; border-radius: 14px !important; }
-  :is(#rso .g, #search .MjjYud > .g) {
-    background: var(--rico-panel) !important;
-    border: 1px solid #443357 !important;
-    border-radius: 15px !important;
-    padding: 14px 17px !important;
+  /* Tint Google's own canvas so its light and dark text palettes both work. */
+  :root {
+    --rico-google-canvas: color-mix(in srgb, var(--xhUGwc, Canvas) 94%, #302344);
+    --rico-google-border: color-mix(in srgb, currentColor 25%, #8a64a9);
   }
-  #search a h3 { color: var(--rico-link) !important; }
-  #search a:hover h3 { color: var(--rico-accent) !important; }
-  #search :is(cite, .VwiC3b) { color: var(--rico-muted) !important; }
+  :is(:root, body, #searchform, #appbar, #fbar, #cnt) {
+    background-color: var(--rico-google-canvas) !important;
+  }
+  #searchform { border-bottom: 1px solid var(--rico-google-border) !important; }
+  .RNNXgb { border-color: var(--rico-google-border) !important; border-radius: 14px !important; }
   /* Google AI Overview paints the fade and the solid strip under the
      expand button on separate layers. Keep the button and its layout. */
   .RDmXvc, .RDmXvc::before, .RDmXvc::after,

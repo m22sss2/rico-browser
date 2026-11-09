@@ -8,10 +8,13 @@ Rico Browser est une personnalisation de Firefox ESR pour Windows x64. Il propos
 - [`overlay/`](./overlay) contient la configuration chargée par Firefox, dont le logo Windows, la page de nouvel onglet et les politiques d’extensions.
 - [`src/`](./src) contient le lanceur Windows et le code qui génère et applique son icône.
 - [`Build.ps1`](./Build.ps1) assemble Rico. [`Update-Rico.ps1`](./Update-Rico.ps1) remplace le moteur depuis un paquet Mozilla vérifié.
+- [`Build-Installer.ps1`](./Build-Installer.ps1) produit l’installateur Windows à partir du navigateur assemblé avec [`RicoSetup.nsi`](./RicoSetup.nsi).
 
 Le moteur de cette version de Rico est **Firefox ESR 153.6.0**. Ses sources complètes sont consultables à la [révision Mozilla exacte](https://hg.mozilla.org/releases/mozilla-esr153/file/d63de7b9609253a860fbb0050f678700f4cdc492/) et disponibles en [archive officielle](https://archive.mozilla.org/pub/firefox/releases/153.6.0esr/source/firefox-153.6.0esr.source.tar.xz). Ce dépôt contient la couche Rico et utilise le moteur ESR déjà compilé par Mozilla. Une nouvelle construction récupère l’ESR courant.
 
 ## Construire
+
+Une fois Rico assemblé, ajoutez [NSIS](https://nsis.sourceforge.io/Download) au PATH et lancez `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Build-Installer.ps1`. Le résultat est `dist\Rico-Browser-Setup.exe`. Il installe Rico pour le compte Windows courant et ajoute un raccourci au menu Démarrer. La désinstallation depuis les paramètres de Windows conserve le dossier `profile`.
 
 Installez 7-Zip, Python et Pillow (`python -m pip install Pillow`). Le lanceur se compile avec le compilateur .NET Framework de Windows. Dans PowerShell, lancez `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Build.ps1`, puis ouvrez `dist\Rico Browser\rico.exe`.
 
