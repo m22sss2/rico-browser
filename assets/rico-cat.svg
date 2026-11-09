@@ -22,7 +22,6 @@
       <stop offset="1" stop-color="#e98db1" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <!-- The left edge is cropped by the card, like a mascot leaning into view. -->
   <path d="M-10 83C-4 66 6 57 20 55c20-4 41 9 52 28Z" fill="url(#jacket)"/>
   <path d="m17 64 14 18h27L42 62Z" fill="#eee4f2"/>
   <path d="m11 61 13-3 10 22H22L8 72l6-3Z" fill="#49477e"/>

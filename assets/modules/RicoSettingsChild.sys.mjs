@@ -4,7 +4,6 @@ export class RicoSettingsChild extends JSWindowActorChild {
     if (document.documentURI.split(/[?#]/)[0] !== "about:preferences") return;
 
     const logoUrl = "resource://rico-assets/rico.svg";
-    const mascotUrl = "resource://rico-assets/rico-cat.svg";
     const brand = () => {
       const nav = document.getElementById("categories");
       const logo = nav?.openOrClosedShadowRoot?.querySelector(".logo");
@@ -21,7 +20,6 @@ export class RicoSettingsChild extends JSWindowActorChild {
       }
       for (const id of ["isDefaultPane", "isNotDefaultPane"]) {
         for (const promo of document.querySelectorAll(`[id="${id}"]`)) {
-          promo.setAttribute("imagesrc", mascotUrl);
           const message = promo.getAttribute("message");
           if (message?.includes("Firefox")) {
             promo.removeAttribute("data-l10n-id");

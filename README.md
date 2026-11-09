@@ -19,7 +19,7 @@ La construction télécharge Firefox ESR en français depuis Mozilla, vérifie l
 
 Pour mettre le moteur à jour, quittez Rico Browser et lancez **Mettre a jour Rico.cmd**. L’outil vérifie les signatures Mozilla avant de réappliquer le nom et l’icône. Le profil est enregistré à part dans `profile`.
 
-L’illustration vectorielle [`assets/rico-cat.svg`](./assets/rico-cat.svg) est utilisée dans la carte « Navigateur par défaut » des paramètres.
+Le [registre des illustrations](./assets/rico-mascots.manifest) remplace les renards intégrés identifiés dans Firefox ESR, notamment dans les paramètres, l’accueil de première utilisation et les cartes de l’interface. La [variante IA](./assets/rico-cat-ai.svg) regarde vers le texte à gauche.
 
 ## Licences
 
