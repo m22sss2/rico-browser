@@ -186,8 +186,10 @@
   #search a h3 { color: var(--rico-link) !important; }
   #search a:hover h3 { color: var(--rico-accent) !important; }
   #search :is(cite, .VwiC3b) { color: var(--rico-muted) !important; }
-  /* Google AI Overview: remove only the decorative fade over the preview. */
-  .RDmXvc, .RDmXvc::before, .RDmXvc::after {
+  /* Google AI Overview paints the fade and the solid strip under the
+     expand button on separate layers. Keep the button and its layout. */
+  .RDmXvc, .RDmXvc::before, .RDmXvc::after,
+  .hdzaWe .lACQkd > .zNsLfb {
     background: transparent !important;
     mask-image: none !important;
     box-shadow: none !important;
