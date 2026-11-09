@@ -15,7 +15,7 @@ Le moteur de cette version de Rico est **Firefox ESR 153.6.0**. Ses sources comp
 
 Installez 7-Zip, Python et Pillow (`python -m pip install Pillow`). Le lanceur se compile avec le compilateur .NET Framework de Windows. Dans PowerShell, lancez `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Build.ps1`, puis ouvrez `dist\Rico Browser\rico.exe`.
 
-La construction télécharge Firefox ESR en français depuis Mozilla, vérifie la signature de son installateur et télécharge uBlock Origin depuis Mozilla Add-ons. Le moteur est renommé et son icône PE est remplacée. Cette dernière opération invalide la signature Authenticode du fichier moteur personnalisé. La signature du paquet Mozilla est vérifiée avant la personnalisation. Le lanceur et le moteur Rico construits localement ne sont pas signés par Rico.
+La construction télécharge Firefox ESR en français depuis Mozilla, vérifie la signature de son installateur et télécharge uBlock Origin depuis Mozilla Add-ons. Le moteur devient `rico.exe`. Son icône, sa description et le nom de produit Windows sont personnalisés, afin que le Gestionnaire des tâches affiche Rico. Ces modifications invalident la signature Authenticode du fichier moteur personnalisé. La signature du paquet Mozilla est vérifiée avant la personnalisation. Le lanceur et le moteur Rico construits localement ne sont pas signés par Rico.
 
 Pour mettre le moteur à jour, quittez Rico Browser et lancez **Mettre a jour Rico.cmd**. L’outil vérifie les signatures Mozilla avant de réappliquer le nom et l’icône. Le profil est enregistré à part dans `profile`.
 

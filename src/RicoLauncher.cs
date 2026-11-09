@@ -7,10 +7,10 @@ using System.Text;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
-[assembly: AssemblyTitle("Rico Browser")]
-[assembly: AssemblyProduct("Rico Browser")]
+[assembly: AssemblyTitle("Rico")]
+[assembly: AssemblyProduct("Rico")]
 [assembly: AssemblyDescription("Lanceur de Rico Browser")]
-[assembly: AssemblyVersion("1.4.0.0")]
+[assembly: AssemblyVersion("1.4.1.0")]
 
 internal static class RicoLauncher
 {
@@ -75,7 +75,8 @@ internal static class RicoLauncher
         }
         catch (Exception error)
         {
-            MessageBox.Show(error.Message, "Rico Browser", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (args.Length == 2 && args[0] == "--brand-runtime") Console.Error.WriteLine(error.Message);
+            else MessageBox.Show(error.Message, "Rico Browser", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return 1;
         }
     }
